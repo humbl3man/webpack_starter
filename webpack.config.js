@@ -1,7 +1,7 @@
 module.exports = {
-  entry: ['./app.js', './global.js'],
+  entry: './src/index.js',
   output: {
-    filename: 'bundle.js',
+    filename: './dist/bundle.js',
   },
   watch: true,
   module: {
@@ -22,8 +22,8 @@ module.exports = {
         },
       },
       {
-        test: [/\.css$/],
-        loader: 'css-loader',
+        test: [/.scss$/],
+        loader: 'style!css!sass',
       },
     ],
   },
@@ -32,6 +32,6 @@ module.exports = {
   // of file types we can process without specifically giving them a file extension
 
   resolve: {
-    extensions: ['', '.js', '.es6', '.jsx'],
+    extensions: ['', '.js', '.es6', '.jsx', '.css', '.scss'],
   },
 };
